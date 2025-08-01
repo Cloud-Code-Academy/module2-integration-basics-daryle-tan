@@ -120,6 +120,7 @@ public with sharing class DummyJSONCallout {
 		req.setTimeout(100000);
 		// Set the body using generateDummyJsonUserPayload method.
 		String jsonPayload = generateDummyJsonUserPayload(contactId);
+		req.setBody(jsonPayload);
 		// Send the HTTP request and get the response.
 		HttpResponse res = http.send(req);
 		// If the HTTP response code is successful, update the contact.
